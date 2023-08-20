@@ -19,8 +19,23 @@ model User {
 
 model Products {
   id        String   @id @default(uuid()) @map("_id")
-  name      String  
+  name      String   @unique
   price     Float
   image     String
+  createdAt DateTime @default(now())
+}
+
+model Categs {
+  id   String @id @default(uuid()) @map("_id")
+  name String
+}
+
+model Posts {
+  id        String   @id @default(uuid()) @map("_id")
+  title     String
+  text      String
+  image     String
+  likes     Int      @default(0)
+  views     Int      @default(0)
   createdAt DateTime @default(now())
 }
