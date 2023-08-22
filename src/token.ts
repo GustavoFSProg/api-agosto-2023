@@ -13,16 +13,16 @@ export async function generateToken(data: any) {
 // //   return jwt.decode(token,  process.env.SECRET as string & { asBytes: true }))
 // // }
 
-// export function verifyToken(token: any) {
-//   return (
-//     jwt.verify(token, process.env.SECRET as string & { asBytes: true }),
-//     (error: any, decode: any) => {
+ export function verifyToken(token: any) {
+   return (
+     jwt.verify(token, process.env.SECRET as string & { asBytes: true }),
+     (error: any, decode: any) => {
       
-//       if (error) return { error } as any
-//       return { decode } as any
-//     }
-//   )
-// }
+       if (error) return { error } as any
+       return { decode } as any
+     }
+   )
+ }
 
 // // export async function isUser(data: any) {
 // //   const { email, password } = data

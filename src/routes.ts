@@ -4,6 +4,7 @@ import { multerConfig } from './uploader'
 import UserController from './controllers/UserController'
 import categoryController from './controllers/categoryController'
 import PostController from './controllers/PostController'
+import { isAuthorized } from './controllers/autorize'
 
 const routes = Router()
 
@@ -12,13 +13,13 @@ routes.get('/', (req: Request, res: Response) => {
 })
 
 // users
-routes.get('/get-all-users', UserController.getlAllUsers)
+routes.get('/get-all-users', isAuthorized, UserController.getlAllUsers)
 routes.post('/register-user', UserController.registerUser)
 routes.post('/login', UserController.Login)
 routes.delete('/delete-all-users', UserController.deletAllusers)
 
 // products
-routes.post('/register-product', multerConfig, productsContnroller.RegsiterProduct)
+routes.post('/register-product', isAuthorized, multerConfig, productsContnroller.RegsiterProduct)
 routes.put('/update-product/:id', multerConfig, productsContnroller.UpdateProduct)
 routes.get('/get-all-products', productsContnroller.getlAllProducts)
 routes.get('/get-product/:id', productsContnroller.getProduct)
