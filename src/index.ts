@@ -11,7 +11,7 @@ import routes from './routes'
 
   app.use(cors(
     {
-      origin:[ "https://agosto-site.netlify.app", "http://localhost:5000"]
+      origin:[ "https://agosto-site.netlify.app", "http://localhost:5173"]
     }
 
   ))
