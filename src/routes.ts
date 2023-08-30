@@ -24,6 +24,7 @@ routes.put('/update-product/:id', multerConfig, productsContnroller.UpdateProduc
 routes.get('/get-all-products', productsContnroller.getlAllProducts)
 routes.get('/get-product/:id', productsContnroller.getProduct)
 routes.delete('/delete-products', productsContnroller.deleteProducts)
+routes.delete('/delete-one-product/:id', productsContnroller.deleteOneProduct)
 
 // posts
 routes.post('/register-post', multerConfig, PostController.registerPost)

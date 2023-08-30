@@ -116,6 +116,21 @@ async function deleteProducts(req: Request, res: Response) {
   }
 }
 
-export default { RegsiterProduct, deleteProducts, getlOneProducts, UpdateProduct, getProduct, getlAllProducts }
+
+async function deleteOneProduct(req: Request, res: Response) {
+  try {
+    const data = await prisma.products.delete({
+      where: {
+        id: req.params.id
+      }
+    })
+
+    return res.status(201).send({ data })
+  } catch (error) {
+    return res.status(400).send({ msg: 'ERROR!!', error })
+  }
+}
+
+export default { deleteOneProduct, RegsiterProduct, deleteProducts, getlOneProducts, UpdateProduct, getProduct, getlAllProducts }
 
 
