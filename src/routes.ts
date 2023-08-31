@@ -29,6 +29,7 @@ routes.delete('/delete-one-product/:id', productsContnroller.deleteOneProduct)
 // posts
 routes.post('/register-post', multerConfig, PostController.registerPost)
 routes.get('/get-all-posts', PostController.getlAllPosts)
+routes.get('/get-one-post/:id', PostController.getlOnePost)
 routes.put('/update-post/:id', multerConfig, PostController.updatePost)
 routes.put('/likes/:id', PostController.updateLikes)
 routes.put('/views/:id', PostController.updateViews)

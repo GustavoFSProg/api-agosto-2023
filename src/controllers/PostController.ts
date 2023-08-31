@@ -133,5 +133,18 @@ async function getlAllPosts(req: Request, res: Response) {
 }
 
 
+async function getlOnePost(req: Request, res: Response) {
+  try {
+    const data = await prisma.posts.findFirst({
+      where:{id: req.params.id}
+    })
 
-export default {updateLikes, updateViews, registerPost, getlAllPosts, updatePost }
+    return res.status(201).send({ data })
+  } catch (error) {
+    return res.status(400).send({ msg: 'ERROR!!', error })
+  }
+}
+
+
+
+export default {getlOnePost, updateLikes, updateViews, registerPost, getlAllPosts, updatePost }
