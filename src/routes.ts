@@ -27,7 +27,7 @@ routes.delete('/delete-products', productsContnroller.deleteProducts)
 routes.delete('/delete-one-product/:id', productsContnroller.deleteOneProduct)
 
 // posts
-routes.post('/register-post', multerConfig, PostController.registerPost)
+routes.post('/register-post', isAuthorized, multerConfig, PostController.registerPost)
 routes.get('/get-all-posts', PostController.getlAllPosts)
 routes.get('/get-one-post/:id', PostController.getlOnePost)
 routes.put('/update-post/:id', multerConfig, PostController.updatePost)
