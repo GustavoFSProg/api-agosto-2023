@@ -19,7 +19,7 @@ routes.post('/login', UserController.Login)
 routes.delete('/delete-all-users', UserController.deletAllusers)
 
 // products
-routes.post('/register-product', isAuthorized, multerConfig, productsContnroller.RegsiterProduct)
+routes.post('/register-product',  multerConfig, productsContnroller.RegsiterProduct)
 routes.put('/update-product/:id', multerConfig, productsContnroller.UpdateProduct)
 routes.get('/get-all-products', productsContnroller.getlAllProducts)
 routes.get('/get-product/:id', productsContnroller.getProduct)
